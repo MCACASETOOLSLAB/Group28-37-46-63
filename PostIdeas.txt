@@ -1,0 +1,19 @@
+Idea 1
+
+Two people meeting at the ends of a narrow corridor, wanting to get to the other side.
+processes == persons
+resource == corridor
+mutex == person can pass at a time. ie. Only one person can lock and use the corridor. 
+         Unless he crosses the corridor and leaves it, person from other side can't lock to use the corridor.
+busy waiting == person on each end keep checking for corridor to be vacated
+monitor == people are given priority directly proportional to their age
+starvation == less aged person might hae to wait forever
+
+
+..........................................................................................................................
+
+Idea 2
+
+
+
+..........................................................................................................................
