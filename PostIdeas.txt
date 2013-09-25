@@ -17,5 +17,12 @@ starvation == less aged person might hae to wait forever
 Idea 2
 
 
+Jack and Jill happens to want to make a sandwich at the same time. 
+Both need a slice of bread, so they both goes to get the loaf of bread and a knife.
+
+Jack gets the knife first, while Jill gets the loaf of bread first. 
+Now Jack tries to find the loaf of bread and Jill tries to find the knife, 
+but both find that what they need to finish the task is already in use. 
+If they both decide to wait until what they need is no longer in use, they will wait for each other forever. Deadlock.
 
 ..........................................................................................................................
