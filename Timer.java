@@ -11,7 +11,6 @@ public class Timer implements Runnable
         this.q=q;
         limit=l;
         t=new Thread(this,"Timer");
-        q.time_index=(q.time_index+1)%4;
     }
     
     public void run()
@@ -22,7 +21,7 @@ public class Timer implements Runnable
         {
             System.err.println("Thread interrupted");
         }
-        q.timeup[q.time_index]=true;
+        q.timeup=true;
     }
 }
 
