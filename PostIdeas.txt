@@ -26,3 +26,26 @@ but both find that what they need to finish the task is already in use.
 If they both decide to wait until what they need is no longer in use, they will wait for each other forever. Deadlock.
 
 ..........................................................................................................................
+
+Idea 3
+
+There is a transmission channel, a Sender and a Receiver. At any point, either the sender can send a frame across the
+channel, or the receiver can send an acknowledgement across the channel - ie, only one of the threads can take control
+of the channel at any point.
+
+-) frames are numbered alternatively with 0s and 1s, ie, any sequence of frames will have frame numbers in the form
+ .. 01010101010101010..
+ 
+-) when the sender sends frame 0, and the receiver receives it successfully, the latter sends an acknowledgement 1, 
+meaning the next frame expected has frame number  = 1
+
+-) Frames may either be garbled in transmission, or they may be lost. In both the cases, the receiver sends a negative
+acknoqledgement and the sender must resend the frame
+
+-) to detect the case when the frame is lost, there is a timer that runs out
+
+-) the threads Sender and Receiver simulate 2 processes that have to be synchronized in order to work correctly, ie, 
+  the sender has to send 0, and then wait for the acknowledgement 1 from the receiver and only then send 1, and so on
+  
+ 
+ 
