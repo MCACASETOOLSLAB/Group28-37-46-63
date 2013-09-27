@@ -10,5 +10,8 @@ public class SNW
         
         new Receiver(q);
         new Sender(q);
+        /*for(int i=0;Receiver.arr[Receiver.index]!=-1;i++){
+            System.out.print(Receiver.arr[Receiver.index]+"  ");
+        }*/
     }
 }
