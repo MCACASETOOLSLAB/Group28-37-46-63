@@ -1,28 +1,28 @@
 import java.io.*;
 
-public class Receiver implements Runnable
+public class Sender implements Runnable
 {
     Channel q;
     Thread t;
-    static int i=0;
-    //static int arr[];
-    static int index=0;
+    public static int i=0;
     
-    public Receiver(Channel q)
+    public Sender(Channel q)
     {
         this.q=q;
-        t=new Thread(this,"Cons");
+        t=new Thread(this,"Prod");
         t.start();
-        /*arr=new int[10];
-        for(int i=0;i<index;i++){
-            arr[i]=-1;
-        }*/
+        
     }
     
     public void run()
     {
+        int k=0;
         while(!q.done){
-            q.get();
+            
+            q.put(i);
+            i=(i+1)%2;
+            k++;
+            if(k==8)q.done=true;
         }
     }
     
