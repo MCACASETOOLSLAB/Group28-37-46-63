@@ -46,6 +46,18 @@ acknoqledgement and the sender must resend the frame
 
 -) the threads Sender and Receiver simulate 2 processes that have to be synchronized in order to work correctly, ie, 
   the sender has to send 0, and then wait for the acknowledgement 1 from the receiver and only then send 1, and so on
+  .....................................................................................................................
+  
+     Above idea  can be implemented on string format data.
+     
+  -)frames can be character  or string ie sequence of character consider as a frame.Suppose a string to be send by sender 
+   to the reciver.A single character as a frame transfer to reciever and  send acknowledgement
+   to the sender.If sender get acknowledgement of one frame than it send another,if not send again.
+  
+  -)Reciever recieve all frame one by one and then combine all frame together to show the resultant data.
+
+  -)There are two module sender and reciever.Both executable file open concurrently.Sender will send data if 
+    it is able to connect to reciever module ie reciever executable file.  
   
  
  
