@@ -2,20 +2,20 @@
 
 import java.io.*;
 import java.net.*;
-public class Reciever01{
-ServerSocket Reciever01;
+public class Receiver01{
+ServerSocket Receiver01;
 Socket connection=null;
 ObjectOutputStream out;
 ObjectInputStream in;
 String packet,ack,data="";
 int i=0,sequence=0;
-Reciever01(){}
+Receiver01(){}
 public void run(){
 try{
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-Reciever01 = new ServerSocket(2004,10);
+Receiver01 = new ServerSocket(2004,10);
 System.out.println("waiting for connection...");
-connection=Reciever01.accept();
+connection=Receiver01.accept();
 sequence=0;
 System.out.println("Connection established   :");
 out=new ObjectOutputStream(connection.getOutputStream());
@@ -52,13 +52,13 @@ finally{
 try{
 in.close();
 out.close();
-Reciever01.close();
+Receiver01.close();
 }
 catch(Exception e){}
 }
 }
 public static void main(String args[]){
-Reciever01 s=new Reciever01();
+Receiver01 s=new Receiver01();
 while(true){
 s.run();
 }
