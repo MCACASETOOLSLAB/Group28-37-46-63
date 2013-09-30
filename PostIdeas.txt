@@ -50,14 +50,16 @@ acknoqledgement and the sender must resend the frame
   
      Above idea  can be implemented on string format data.
      
-  -)frames can be character  or string ie sequence of character consider as a frame.Suppose a string to be send by sender 
-   to the reciver.A single character as a frame transfer to reciever and  send acknowledgement
-   to the sender.If sender get acknowledgement of one frame than it send another,if not send again.
+     Chat Application:
+     
+  -)frames can be character  or string ie sequence of character consider as a frame.Suppose a string to be send by sender(server) 
+   to the reciver.A single character as a frame transfer to reciever(client) and  send acknowledgement
+   to the sender.If sender(server) get acknowledgement of one frame than it send another,if not send again.
   
-  -)Reciever recieve all frame one by one and then combine all frame together to show the resultant data.
+  -)Reciever recieve(client) all frame one by one and then combine all frame together to show the resultant data.
 
-  -)There are two module sender and reciever.Both executable file open concurrently.Sender will send data if 
-    it is able to connect to reciever module ie reciever executable file.  
+  -)There are two module Server and client.Both executable file open concurrently.Server will send data if 
+    it is able to connect to client.  
   
  
  
