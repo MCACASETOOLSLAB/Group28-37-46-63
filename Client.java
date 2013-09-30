@@ -1,21 +1,21 @@
- //RECEIVER PROGRAM
+ //CLIENT PROGRAM
 
 import java.io.*;
 import java.net.*;
-public class Receiver01{
-ServerSocket Receiver01;
+public class Client{
+ServerSocket Client;
 Socket connection=null;
 ObjectOutputStream out;
 ObjectInputStream in;
 String packet,ack,data="";
 int i=0,sequence=0;
-Receiver01(){}
+Client(){}
 public void run(){
 try{
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-Receiver01 = new ServerSocket(2004,10);
+Client = new ServerSocket(2004,10);
 System.out.println("waiting for connection...");
-connection=Receiver01.accept();
+connection=Client.accept();
 sequence=0;
 System.out.println("Connection established   :");
 out=new ObjectOutputStream(connection.getOutputStream());
@@ -52,13 +52,13 @@ finally{
 try{
 in.close();
 out.close();
-Receiver01.close();
+Client.close();
 }
 catch(Exception e){}
 }
 }
 public static void main(String args[]){
-Receiver01 s=new Receiver01();
+Client s=new Client();
 while(true){
 s.run();
 }
