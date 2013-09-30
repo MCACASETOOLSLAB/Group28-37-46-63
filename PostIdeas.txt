@@ -50,8 +50,6 @@ acknoqledgement and the sender must resend the frame
   
      Above idea  can be implemented on string format data.
      
-     Chat Application:
-     
   -)frames can be character  or string ie sequence of character consider as a frame.Suppose a string to be send by sender(server) 
    to the reciver.A single character as a frame transfer to reciever(client) and  send acknowledgement
    to the sender.If sender(server) get acknowledgement of one frame than it send another,if not send again.
