@@ -1,24 +1,24 @@
- //Sender01 PROGRAM
+ //Server PROGRAM
 
 import java.io.*;
 import java.net.*;
-public class Sender01{
-Socket Sender01;
+public class Server{
+Socket Server;
 ObjectOutputStream out;
 ObjectInputStream in;
 String packet,ack,str, msg;
 int n,i=0,sequence=0;
-Sender01(){}
+Server(){}
 public void run(){
  try{
  BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 System.out.println("Waiting for Connection....");
- Sender01 = new Socket("localhost",2004);
+ Server = new Socket("localhost",2004);
 sequence=0;
 
-out=new ObjectOutputStream(Sender01.getOutputStream());
+out=new ObjectOutputStream(Server.getOutputStream());
 out.flush();
- in=new ObjectInputStream(Sender01.getInputStream());
+ in=new ObjectInputStream(Server.getInputStream());
  str=(String)in.readObject();
  System.out.println("reciver     > "+str);
 System.out.println("Enter the data to send....");
@@ -55,13 +55,13 @@ finally{
 try{
 in.close();
 out.close();
-Sender01.close();
+Server.close();
 }
 catch(Exception e){}
 }
 }
 public static void main(String args[]){
-Sender01 s=new Sender01();
+Server s=new Server();
 s.run();
 }
 }
